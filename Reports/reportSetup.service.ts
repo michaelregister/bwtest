@@ -38,6 +38,6 @@
         }
     }
     //angular.module('app').service("reportSetup", reportSetup);
-    angular.module('app').factory('reportSetup',($rootScope)
+    angular.module(NameSpace).factory('reportSetup',($rootScope)
         => { return new reportModule.reportSetup($rootScope); });
 } 

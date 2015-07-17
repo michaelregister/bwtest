@@ -26,7 +26,7 @@ module app {
     };
         constructor() {
         }
-        templateUrl: string = '/app/Features/Reports/Reports.html';
+        templateUrl: string = '~/../bower_components/mrtest/Reports/Reports.html';
 
         controller = ['$scope', 'reportService', '$attrs', 'reportSetup', function ($scope: IReportScope, reportService,
             $attrs, reportSetup: reportModule.IreportSetup) {
@@ -93,5 +93,5 @@ module app {
         }
     }
 
-    angular.module('app').directive("reports",() => Reports.getInstance());
+    angular.module(NameSpace).directive("reports",() => Reports.getInstance());
 }

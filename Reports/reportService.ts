@@ -128,5 +128,5 @@ module reportModule
    
 }
 
-angular.module('app').factory('reportService',($http, reportSetup)
+angular.module(NameSpace).factory('reportService',($http, reportSetup)
     => { return new reportModule.reportService($http, reportSetup); });
