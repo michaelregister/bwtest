@@ -1,0 +1,24 @@
+{
+  "name": "mrtest",
+  "version": "0.0.0",
+  "homepage": "https://github.com/michaelregister/bwtest",
+  "authors": [
+    "michaelregister <michael@innovocative.com>"
+  ],
+  "description": "my first bower package",
+  "keywords": [
+    "mr",
+    "test"
+  ],
+    "license": "MIT",
+       "dependencies": {
+        "angularjs-dropdown-multiselect": "*"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
