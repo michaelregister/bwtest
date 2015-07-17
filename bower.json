@@ -12,7 +12,8 @@
   ],
     "license": "MIT",
        "dependencies": {
-        "angularjs-dropdown-multiselect": "*"
+        "angularjs-dropdown-multiselect": "*",
+         "underscore": "~1.5.2"
   },
   "ignore": [
     "**/.*",
