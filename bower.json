@@ -14,7 +14,7 @@
        "dependencies": {
         "angularjs-dropdown-multiselect": "*",
         "underscore": "~1.8.3",
-        "font-awesome": "*"
+        "font-awesome": "*",
 		"bootstrap":"*"
   },
   "ignore": [
