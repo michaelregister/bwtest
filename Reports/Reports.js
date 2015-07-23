@@ -68,6 +68,6 @@ var app;
         };
         return Reports;
     })();
-    angular.module(NameSpace).directive("reports", function () { return Reports.getInstance(); });
+    angular.module("Xceligent.Reports").directive("reports", function () { return Reports.getInstance(); });
 })(app || (app = {}));
 //# sourceMappingURL=Reports.js.map

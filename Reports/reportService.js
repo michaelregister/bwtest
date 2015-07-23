@@ -96,7 +96,7 @@ var reportModule;
     })();
     reportModule.reportService = reportService;
 })(reportModule || (reportModule = {}));
-angular.module(NameSpace).factory('reportService', function ($http, reportSetup) {
+angular.module("Xceligent.Reports").factory('reportService', function ($http, reportSetup) {
     return new reportModule.reportService($http, reportSetup);
 });
 //# sourceMappingURL=reportService.js.map

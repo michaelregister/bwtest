@@ -29,8 +29,7 @@ var reportModule;
         return reportSetup;
     })();
     reportModule.reportSetup = reportSetup;
-    //angular.module('app').service("reportSetup", reportSetup);
-    angular.module(NameSpace).factory('reportSetup', function ($rootScope) {
+    angular.module("Xceligent.Reports").factory('reportSetup', function ($rootScope) {
         return new reportModule.reportSetup($rootScope);
     });
 })(reportModule || (reportModule = {}));
