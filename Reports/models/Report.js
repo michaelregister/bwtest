@@ -1,5 +1,6 @@
-var app;
-(function (app) {
+var reportModule;
+(function (reportModule) {
+    "use strict";
     var Report = (function () {
         function Report() {
             this.value = "";
@@ -8,6 +9,6 @@ var app;
         }
         return Report;
     })();
-    app.Report = Report;
-})(app || (app = {}));
+    reportModule.Report = Report;
+})(reportModule || (reportModule = {}));
 //# sourceMappingURL=Report.js.map

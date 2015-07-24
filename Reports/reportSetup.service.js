@@ -1,36 +1,34 @@
 var reportModule;
 (function (reportModule) {
     "use strict";
-    var reportSetup = (function () {
-        function reportSetup($rootScope) {
+    var ReportSetup = (function () {
+        function ReportSetup($rootScope) {
             this.$rootScope = $rootScope;
-            this.CurrentInUse = "";
-            //constructor() {
+            this.currentInUse = "";
             var vm = this;
         }
-        reportSetup.prototype.CanIBeSelected = function (controllerID) {
+        ReportSetup.prototype.canIBeSelected = function (controllerID) {
             var rtValue = false;
-            if (this.CurrentInUse == "Address") {
-                this.CurrentInUse = controllerID;
+            if (this.currentInUse === "Address") {
+                this.currentInUse = controllerID;
                 rtValue = true;
             }
-            else if (this.CurrentInUse == controllerID) {
-                this.CurrentInUse = controllerID;
+            else if (this.currentInUse === controllerID) {
+                this.currentInUse = controllerID;
                 rtValue = true;
             }
-            this.$rootScope.$broadcast('ReportDisable');
+            this.$rootScope.$broadcast("ReportDisable");
             return rtValue;
         };
-        reportSetup.prototype.ResetCurrent = function () {
-            this.CurrentInUse = "";
-            this.$rootScope.$broadcast('ReportEnable');
+        ReportSetup.prototype.resetCurrent = function () {
+            this.currentInUse = "";
+            this.$rootScope.$broadcast("ReportEnable");
         };
-        reportSetup.$inject = ['$rootScope'];
-        return reportSetup;
+        return ReportSetup;
     })();
-    reportModule.reportSetup = reportSetup;
-    angular.module("Xceligent.Reports").factory('reportSetup', function ($rootScope) {
-        return new reportModule.reportSetup($rootScope);
+    reportModule.ReportSetup = ReportSetup;
+    angular.module("lba.reportModule").factory("reportSetup", function ($rootScope) {
+        return new reportModule.ReportSetup($rootScope);
     });
 })(reportModule || (reportModule = {}));
 //# sourceMappingURL=reportSetup.service.js.map

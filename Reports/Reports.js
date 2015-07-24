@@ -1,15 +1,16 @@
-/// <reference path="../../../scripts/global.ts" />
-var app;
-(function (app) {
+/// <reference path="../../scripts/global.ts" />
+var reportModule;
+(function (reportModule) {
+    "use strict";
     var Reports = (function () {
         function Reports() {
             this.restrict = "E";
             this.scope = {
-                xcGeotype: '@',
-                xcGeomid: '@'
+                xcGeotype: "@",
+                xcGeomid: "@"
             };
-            this.templateUrl = '/app/Features/Reports/Reports.html';
-            this.controller = ['$scope', 'reportService', '$attrs', 'reportSetup', function ($scope, reportService, $attrs, reportSetup) {
+            this.templateUrl = "lib/Reports/Reports.html";
+            this.controller = ["$scope", "reportService", "$attrs", "reportSetup", function ($scope, reportService, $attrs, reportSetup) {
                 $scope.Reports = [];
                 $scope.Reports.push({ value: "R$000000001", text: "Executive Summary", active: false });
                 $scope.Reports.push({ value: "R$000000003", text: "Executive Summary (1,3,5)", active: false });
@@ -23,8 +24,8 @@ var app;
                 $scope.Reports.push({ value: "8", text: "Business NAICS", active: false });
                 $scope.Reports.push({ value: "9", text: "Popluation Trend", active: false });
                 $scope.Reports.push({ value: "10", text: "Households Trend", active: false });
-                $scope.Texts = { buttonDefaultText: 'Select Reports', dynamicButtonTextSuffix: ' Reports' };
-                $scope.settings = { displayProp: 'text', idProp: 'value', buttonClasses: 'btn mybtn multiselect', scrollable: true };
+                $scope.Texts = { buttonDefaultText: "Select Reports", dynamicButtonTextSuffix: " Reports" };
+                $scope.settings = { displayProp: "text", idProp: "value", buttonClasses: "btn mybtn multiselect", scrollable: true };
                 $scope.model = [];
                 $scope.events = { onItemSelect: Select };
                 function Select(item) {
@@ -35,9 +36,9 @@ var app;
                     console.log($scope.model);
                     reportService.model = $scope.model;
                     reportService.reports = $scope.Reports;
-                    if ($scope.xcGeomid != "") {
-                        reportSetup.CurrentInUse = "Geography";
-                        reportSetup.Criteria = function () {
+                    if ($scope.xcGeomid !== "") {
+                        reportSetup.currentInUse = "Geography";
+                        reportSetup.criteria = function () {
                             var gt = $scope.xcGeotype;
                             switch ($scope.xcGeotype) {
                                 case "State":
@@ -62,12 +63,13 @@ var app;
                     reportService.GetReport();
                 };
             }];
+            console.log("Report constructor");
         }
         Reports.getInstance = function () {
             return new Reports();
         };
         return Reports;
     })();
-    angular.module("Xceligent.Reports").directive("reports", function () { return Reports.getInstance(); });
-})(app || (app = {}));
+    angular.module("lba.reportModule").directive("reports", function () { return Reports.getInstance(); });
+})(reportModule || (reportModule = {}));
 //# sourceMappingURL=Reports.js.map
