@@ -1,5 +1,4 @@
-# bwtest
-this is a test of creating a bower package
+# lba.ReportsModule
 * Objects Included
   * reportSetup
     * service to allow for communication between different geometry/geography report providers
