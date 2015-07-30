@@ -1,6 +1,12 @@
-/// <reference path="../../scripts/global.ts" />
-angular.module("lib/Reports/Reports.html", []).run(["$templateCache", function (a) { a.put("lib/Reports/Reports.html", "<div style=float:left><div ng-dropdown-multiselect=\"\" class=mselect options=Reports extra-settings=settings selected-model=model translation-texts=Texts events=events></div><button id=printESR class=\"btn mybtn\" title=\"Print Reports\" ng-click=GetESR()><i id=dIcon class=\"fa fa-print x\"></i> <i id=spinner style=display:none class=\"fa fa-spinner fa-pulse\"></i></button></div>") }]);
+angular.module('lib/Reports/Reports.html', []).run(['$templateCache', function($templateCache) {
+  'use strict';
 
+  $templateCache.put('lib/Reports/Reports.html',
+    "<div style=float:left><div ng-dropdown-multiselect=\"\" class=mselect options=Reports extra-settings=settings selected-model=model translation-texts=Texts events=events></div><button id=printESR class=\"btn mybtn\" title=\"Print Reports\" ng-click=GetESR()><i id=dIcon class=\"fa fa-print x\"></i> <i id=spinner style=display:none class=\"fa fa-spinner fa-pulse\"></i></button></div>"
+  );
+
+}]);
+;/// <reference path="../../scripts/global.ts" />
 var reportModule;
 (function (reportModule) {
     "use strict";
