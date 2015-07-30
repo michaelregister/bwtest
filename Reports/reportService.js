@@ -70,7 +70,7 @@ var reportModule;
             this.getReport(URL);
         };
         ReportService.prototype.GetReportByGeography = function (GeoType, GeoID) {
-            var URL = this.apiURL + "api/neustar/GetReportByGeography?geoid=[" + "\"" + +GeoID + "\"]" + "&geolevel=" + GeoType + "&reportIDS=" + "[" + this.getSelectedReports() + "]";
+            var URL = this.apiURL + "api/neustar/GetReportByGeography?geoid=[" + "\"" + GeoID + "\"]" + "&geolevel=" + GeoType + "&reportIDS=" + "[" + this.getSelectedReports() + "]";
             this.getReport(URL);
         };
         ReportService.prototype.GetReportByCircle = function (lat, lon, radius) {
